@@ -1,18 +1,13 @@
 package com.learn.test.connect;
 
 import com.learn.test.config.ApplicationConfiguration;
-import jakarta.xml.bind.annotation.adapters.HexBinaryAdapter;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.time.Duration;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -106,7 +101,7 @@ public class WikiMediaConnection {
    * @throws InterruptedException
    * @throws NoSuchAlgorithmException
    */
-  public String doMetaDataRequest(String metaDataItem, int skip) throws NoSuchAlgorithmException, UnsupportedEncodingException {
+  public String doGetRequest(String metaDataItem, int skip) throws NoSuchAlgorithmException, UnsupportedEncodingException {
 
     HttpRequest request = createRequest(metaDataItem, skip, null);
     return doWikiMediaRequest(request);
